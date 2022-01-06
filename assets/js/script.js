@@ -82,8 +82,11 @@ quizDiv.addEventListener("click", handleOptionClick);
 var scoreDiv = document.getElementById("score");
 function displayScores () {
     var ol = document.createElement("ol");
-    ol.textContent = "Highscores: " + highscores;
+    ol.textContent = "Highscores: " + highscores[0] + " " + highscores[1] + " " + highscores[2];
     scoreDiv.append(ol);
+    var p = document.createElement("p");
+    p.textContent = "Refresh page to play again :)";
+    scoreDiv.append(p);
 }
 
 var highscores = JSON.parse(localStorage.getItem("highscores")) || [];
